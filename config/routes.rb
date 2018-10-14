@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
     get "/query_name_url" => "params_examples#query_name_method"
     get "/query_guess_url" => "params_examples#query_guess_method"
+
+    get "/segment_guess_url/:guess" => "params_examples#segment_guess_method"
   end
 end

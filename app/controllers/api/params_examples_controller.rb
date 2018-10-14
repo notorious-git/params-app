@@ -31,4 +31,17 @@ class Api::ParamsExamplesController < ApplicationController
     end
     render "query_guess.json.jbuilder"
   end
+
+  def segment_guess_method
+    winning_number = 32
+    input_guess = params["guess"].to_i
+    if input_guess > winning_number
+      @output_message = "Pick lower!"
+    elsif input_guess < winning_number
+      @output_message = "Pick higher!"
+    else
+      @output_message = "You win!"
+    end
+    render "segment_guess.json.jbuilder"
+  end
 end
