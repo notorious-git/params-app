@@ -10,6 +10,11 @@ class Api::ParamsExamplesController < ApplicationController
     render "url_segment_params.json.jbuilder"
   end
 
+  def body_params_method
+    @message = params["secret_info"]
+    render "body_params.json.jbuilder"
+  end
+
   def query_name_method
     input_name = params["name"]
     @output_name = input_name.upcase
